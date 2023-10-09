@@ -15,6 +15,9 @@ const nagyEmberek = lista.filter(dolgozok => dolgozok.nev.includes("Nagy"));
 console.log("Nagy vezetéknevűek: ");
 console.table(nagyEmberek);
 
-const kiskoruak = lista.filter(dolgozok => dolgozok.kor < 18).map(dolgozok => dolgozok.nev + " " + dolgozok.fizetes);
+const kiskoruak = lista.filter(dolgozok => dolgozok.kor < 18).map(dolgozok => ({
+    nev: dolgozok.nev,
+    fizetes: dolgozok.fizetes
+}));
 console.log("Kiskorúak: ");
 console.table(kiskoruak);
